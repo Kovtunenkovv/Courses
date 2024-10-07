@@ -18,6 +18,7 @@ for line in result:
         print(f'All possible combination {mat}')
         print(f'The {n} character password was selected in {round(t2-t1, 5)} seconds')
         break
+print(f'Error, compare your psw "{p}" and available symbols "{symbols}"')
 
 """
 write you psw: 01234567
