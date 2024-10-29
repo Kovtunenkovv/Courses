@@ -3,11 +3,12 @@ import os
 with open("IP.txt", 'r') as f_in: 
     with open("IP_out.txt", 'w') as f_out: 
         for line in f_in:
-            response = os.system("ping -n 1 " + line)
+            line = line.strip()
+            response = os.system(f"ping -n 1 {line}")
             if response == 0:
-                f_out.write(str(line).replace("\n","") + ' : is up!' + "\n")
-                print(line.replace("\n","") + 'is up!')
+                status = 'is up!'
             else:
-                f_out.write(str(line).replace("\n","") + ' : is down!' + "\n")
-                print(line.replace("\n","") + ' is down!')    
+                status = 'is down!'
+            f_out.write (f'{line} - {status}\n')
+            print(f'{line} {status}')
 print('finish')
