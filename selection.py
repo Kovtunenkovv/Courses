@@ -1,7 +1,9 @@
 from itertools import product
 import time
+import getpass
 
-psw = str(input('write you psw: '))
+#psw = str(input('write you psw: '))
+psw = getpass.getpass('write your psw: ')
 t1 = time.time()
 ln = len(psw)
 
